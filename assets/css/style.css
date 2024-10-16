@@ -25,6 +25,12 @@
   font-display: swap;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -175,6 +181,7 @@ img {
   -ms-flex-align: center;
   align-items: center;
   background: #00715D;
+  text-align: center;
   border-radius: 100px;
   min-height: 200px;
   padding: 0 50px;
@@ -262,14 +269,12 @@ img {
 
 .for__block:nth-child(1) img {
   position: relative;
-  left: -80px;
   max-width: 1203px;
   max-height: 1066px;
 }
 
 .for__block:nth-child(2) img {
   position: relative;
-  right: -80px;
   max-width: 1082px;
   max-height: 994px;
 }
@@ -348,6 +353,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -371,6 +379,10 @@ img {
   left: 0;
 }
 
+.single__image img {
+  width: 2678px;
+}
+
 .single__image_b {
   bottom: 100px;
   width: 100%;
@@ -379,6 +391,7 @@ img {
 .single__image_b img {
   width: 100%;
   height: auto;
+  width: 3840px;
 }
 
 .kind {
@@ -409,12 +422,14 @@ img {
   position: absolute;
   bottom: 0;
   right: 15px;
+  width: 1486px;
 }
 
 .kind_kind .kind__image_t img {
   bottom: auto;
   top: 0;
   right: 0;
+  width: 1498px;
 }
 
 .kind__container {
@@ -459,6 +474,8 @@ img {
 
 .kind__text {
   margin-right: 50px;
+  position: relative;
+  z-index: 4;
 }
 
 .kind__image {
@@ -466,13 +483,47 @@ img {
   height: auto;
 }
 
+.kind__image img {
+  width: 100%;
+  height: auto;
+}
+
 .header__logo img {
+  width: 100%;
   max-width: 767px;
   height: auto;
 }
 
 .header__logo_big img {
   max-width: 2050px;
+}
+
+@media (min-width: 3000.98px) {
+  .for__block:nth-child(1) img {
+    left: -80px;
+  }
+
+  .for__block:nth-child(2) img {
+    right: -80px;
+  }
+}
+
+@media (max-width: 3300px) {
+  .single__image img {
+    width: calc(300px + 2378 * (100vw - 320px) / 2980);
+  }
+
+  .single__image_b img {
+    width: calc(300px + 3540 * (100vw - 320px) / 2980);
+  }
+
+  .kind_kind .kind__image_abs img {
+    width: calc(1px + 1485 * (100vw - 320px) / 2980);
+  }
+
+  .kind_kind .kind__image_t img {
+    width: calc(1px + 1497 * (100vw - 320px) / 2980);
+  }
 }
 
 @media (any-hover: hover) {
